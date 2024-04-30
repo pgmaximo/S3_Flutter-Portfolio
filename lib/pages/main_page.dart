@@ -11,8 +11,10 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('PedroMáximo.dev', textAlign: TextAlign.left, style: TextStyle(color: ),),
+      ),
     );
   }
 }
