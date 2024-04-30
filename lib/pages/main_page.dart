@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,7 +12,20 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PedroMáximo.dev', textAlign: TextAlign.left, style: TextStyle(color: ),),
+        title: const Text(
+          'PedroMáximo.dev', 
+          textAlign: TextAlign.left, 
+          style: TextStyle(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, fontSize: 20)),
+
+        actions: <Widget> [
+          TextButton(
+            child: const Text('Home'),
+            onPressed: () {
+              
+              }, 
+          )
+        ],
+
       ),
     );
   }
