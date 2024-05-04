@@ -15,6 +15,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       home: const MainPage(),
       theme: fonte,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
