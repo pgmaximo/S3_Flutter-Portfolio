@@ -1,8 +1,12 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:portfolio/breakpoints.dart';
 import 'package:portfolio/widgets/appbar.dart';
-import 'package:portfolio/widgets/section/home.dart';
-import 'package:portfolio/widgets/section/projetos.dart';
-import 'package:portfolio/widgets/section/sobremim.dart';
+import 'package:portfolio/widgets/components/contato.dart';
+import 'package:portfolio/widgets/components/home.dart';
+import 'package:portfolio/widgets/components/projetos.dart';
+import 'package:portfolio/widgets/components/sobremim.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -12,21 +16,28 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      // appBar: MyAppBar(),
+    return LayoutBuilder(
 
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            HomeMenu(),
-            SobreMim(),
-            Projetos(),
-            // Contato(),
-          ],
-        ),
-      )
+
+      builder:(context, constraints) {
+        return const Scaffold(
+          appBar: MyAppBar(),
+
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                HomeMenu(),
+                SobreMim(),
+                Projetos(),
+                Contato(),
+              ],
+            ),
+          )
+        );
+      },
     );
   }
 }
