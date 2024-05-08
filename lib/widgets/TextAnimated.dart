@@ -35,6 +35,7 @@ class _TextoAnimadoState extends State<TextoAnimado> {
         ),
       ],
       pause: const Duration(milliseconds: 2000),
+      repeatForever: true,
       displayFullTextOnTap: true,
       stopPauseOnTap: true,
     );

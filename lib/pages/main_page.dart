@@ -1,13 +1,13 @@
-import 'dart:js';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/breakpoints.dart';
+/*IMPORT DAS PAGINAS DO FLUTTER*/
 import 'package:portfolio/widgets/appbar.dart';
 import 'package:portfolio/widgets/components/contato.dart';
 import 'package:portfolio/widgets/components/home.dart';
 import 'package:portfolio/widgets/components/projetos.dart';
 import 'package:portfolio/widgets/components/sobremim.dart';
 
+// Classe da pagina principal
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -19,25 +19,22 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-
-
-      builder:(context, constraints) {
-        return const Scaffold(
-          appBar: MyAppBar(),
-
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                HomeMenu(),
-                SobreMim(),
-                Projetos(),
-                Contato(),
-              ],
-            ),
-          )
-        );
-      },
+    final larguraTela = MediaQuery.of(context).size.width;
+    return Scaffold(
+      appBar: const MyAppBar(),
+    
+      body: ListView(
+        children: const [
+          Column(
+            children: [
+              HomeMenu(),
+              SobreMim(),
+              Projetos(),
+              Contato(),
+            ],
+          ),
+        ],
+      )
     );
   }
 }

@@ -14,42 +14,51 @@ class _MenuState extends State<HomeMenu> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    return Row(
-      children: [
-        const Expanded(
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Prazer! Pedro Gabriel na área!',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
-                ),
-                Row(
+    return Container(
+      width: size.width,
+      height: 300,
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          children: [
+            const Expanded(
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Sou programador ',
-                      style: TextStyle(fontSize: 52, fontWeight: FontWeight.bold),
+                      'Prazer! Pedro Gabriel na área!',
+                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
                     ),
-                    TextoAnimado()
+                    SizedBox(height: 5),
+                    Row(
+                      children: [
+                        Text(
+                          'Sou programador ',
+                          style: TextStyle(fontSize: 52, fontWeight: FontWeight.bold),
+                        ),
+                        TextoAnimado(),
+                      ],
+                    ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Image.asset(
+                  'assets/emoji.jpg',
+                  alignment: Alignment.center,
+                  width: 450,
+                ),
+              ),
+            ),
+          ],
         ),
-        Flexible(
-          child: Center(
-            child: SizedBox(
-              child: Image.asset(
-                'assets/emoji.jpg',
-                width: 350,
-              )
-            ),
-          ),
-        )
-      ],
+      ),
     );
   }
 }
