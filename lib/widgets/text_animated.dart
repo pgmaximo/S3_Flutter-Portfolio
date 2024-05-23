@@ -13,28 +13,33 @@ class _TextoAnimadoState extends State<TextoAnimado> {
   Widget build(BuildContext context) {
     return AnimatedTextKit(
       animatedTexts: [
-        TyperAnimatedText(
+        TypewriterAnimatedText(
         'Flutter',
+        speed: const Duration(milliseconds: 500),
         textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
-        TyperAnimatedText(
+        TypewriterAnimatedText(
         'Python',
+        speed: const Duration(milliseconds: 500),
         textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
-        TyperAnimatedText(
+        TypewriterAnimatedText(
         'HTML',
+        speed: const Duration(milliseconds: 500),
         textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
-        TyperAnimatedText(
+        TypewriterAnimatedText(
         'CSS',
+        speed: const Duration(milliseconds: 500),
         textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
-        TyperAnimatedText(
+        TypewriterAnimatedText(
         'Freelancer',
+        speed: const Duration(milliseconds: 500),
         textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
       ],
-      pause: const Duration(milliseconds: 2000),
+      pause: const Duration(milliseconds: 0),
       repeatForever: true,
       displayFullTextOnTap: true,
       stopPauseOnTap: true,

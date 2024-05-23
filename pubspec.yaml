@@ -15,17 +15,29 @@ dependencies:
   font_awesome_flutter: '>= 10.7.0 '
   url_launcher: ^6.2.6
   animated_text_kit: ^4.2.2
+  carousel_slider: ^4.2.1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
 
   #assets: // Colocar todas as imagens do projeto
   assets: 
-    - assets\emoji.jpg
+    - assets/emoji.jpg
+    - assets/bootstrap.png
+    - assets/css.png
+    - assets/flutter.png
+    - assets/git.png
+    - assets/googlecloud.png
+    - assets/html.png
+    - assets/java.png
+    - assets/javascript.png
+    - assets/python.png
+    - assets/react.png
+    - assets/tailwind.png
 

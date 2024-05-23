@@ -1,11 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 /*IMPORT DAS PAGINAS DO FLUTTER*/
 import 'package:portfolio/widgets/appbar.dart';
-import 'package:portfolio/widgets/components/contato.dart';
-import 'package:portfolio/widgets/components/home.dart';
-import 'package:portfolio/widgets/components/projetos.dart';
-import 'package:portfolio/widgets/components/sobremim.dart';
+import 'package:portfolio/widgets/sections/home_section/home_desktop.dart';
+import 'package:portfolio/widgets/sections/home_section/home_mobile.dart';
+import 'package:portfolio/widgets/sections/contato.dart';
+import 'package:portfolio/widgets/sections/projetos.dart';
+import 'package:portfolio/widgets/sections/sobre_mim.dart';
 
 // Classe da pagina principal
 class MainPage extends StatefulWidget {
@@ -19,22 +20,30 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    final larguraTela = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: const MyAppBar(),
-    
-      body: ListView(
-        children: const [
-          Column(
+        const breakpointMobile = 600;
+
+    return  LayoutBuilder(
+      builder: (context, constraints) {
+        return Scaffold(
+          backgroundColor: Colors.white,
+        
+          appBar: const MyAppBar(),
+        
+          body: ListView(
             children: [
-              HomeMenu(),
-              SobreMim(),
-              Projetos(),
-              Contato(),
+               constraints.maxWidth < breakpointMobile
+                ? const HomeMenuMobile()
+                : const HomeMenuDesktop(),
+              const SizedBox(height: 20,),
+              const SobreMim(),
+              const SizedBox(height: 20,),
+              const Projetos(),
+              const SizedBox(height: 20,),
+              const Contato(),
             ],
           ),
-        ],
-      )
+        );
+      }
     );
   }
 }
