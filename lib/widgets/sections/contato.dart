@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Importe a biblioteca services para usar a funcionalidade de área de transferência
-import 'package:url_launcher/url_launcher.dart'; // Adicione esta linha para usar o launcher
-import 'package:font_awesome_flutter/font_awesome_flutter.dart'; // Importe o FontAwesome para usar os ícones
-
+import 'package:flutter/services.dart'; 
+import 'package:url_launcher/url_launcher.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class Contato extends StatefulWidget {
   const Contato({super.key});
 
@@ -153,14 +152,14 @@ class _ContatoState extends State<Contato> {
             child: ElevatedButton(
               onPressed: _enviarEmail,
               style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all<Color>(
+                backgroundColor: MaterialStateProperty.all<Color>(
                   const Color.fromARGB(255, 0, 26, 118),
                 ),
-                foregroundColor: WidgetStateProperty.all<Color>(
+                foregroundColor: MaterialStateProperty.all<Color>(
                   Colors.white,
                 ),
-                minimumSize: const WidgetStatePropertyAll<Size>(
-                  Size(150, 50)
+                minimumSize: MaterialStateProperty.all<Size>(
+                  const Size(150, 50),
                 )
               ),
               child: const Text('Enviar', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
@@ -230,11 +229,11 @@ class _ContatoState extends State<Contato> {
         style: const TextStyle(color: Color.fromARGB(255, 0, 26, 118)),
         textAlign: TextAlign.left,
       ),
-      style: const ButtonStyle(
-        fixedSize: WidgetStatePropertyAll(Size(200, 20)),
+      style: ButtonStyle(
+        fixedSize: MaterialStateProperty.all(const Size(200, 20)),
         alignment: Alignment.centerLeft,
-        padding: WidgetStatePropertyAll(EdgeInsets.symmetric(vertical: 10)),
-        textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 16)),
+        padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 10)),
+        textStyle: MaterialStateProperty.all(const TextStyle(fontSize: 16)),
       ),
     );
   }
