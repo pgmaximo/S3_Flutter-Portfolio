@@ -12,7 +12,7 @@ class _SobreMimState extends State<SobreMim> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (contextm, constrait) {
+      builder: (context, constrait) {
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: const Wrap(
@@ -50,7 +50,6 @@ class _SobreMimState extends State<SobreMim> {
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 20),
                   CarrosselWidget(),
                 ],
               ),

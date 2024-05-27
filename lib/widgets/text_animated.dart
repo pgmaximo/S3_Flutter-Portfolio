@@ -14,29 +14,34 @@ class _TextoAnimadoState extends State<TextoAnimado> {
     return AnimatedTextKit(
       animatedTexts: [
         TypewriterAnimatedText(
-        'Flutter',
-        speed: const Duration(milliseconds: 500),
-        textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
+        'FLUTTER',
+        speed: const Duration(milliseconds: 400),
+        textStyle: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
         TypewriterAnimatedText(
-        'Python',
-        speed: const Duration(milliseconds: 500),
-        textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
+        'PYTHON',
+        speed: const Duration(milliseconds: 400),
+        textStyle: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
         TypewriterAnimatedText(
         'HTML',
-        speed: const Duration(milliseconds: 500),
-        textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
+        speed: const Duration(milliseconds: 400),
+        textStyle: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
         TypewriterAnimatedText(
         'CSS',
-        speed: const Duration(milliseconds: 500),
-        textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
+        speed: const Duration(milliseconds: 400),
+        textStyle: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
+        ),
+        TypewriterAnimatedText(
+        'REACT',
+        speed: const Duration(milliseconds: 400),
+        textStyle: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
         TypewriterAnimatedText(
         'Freelancer',
-        speed: const Duration(milliseconds: 500),
-        textStyle: const TextStyle(fontSize: 52, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
+        speed: const Duration(milliseconds: 400),
+        textStyle: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 0, 26, 118)),
         ),
       ],
       pause: const Duration(milliseconds: 0),

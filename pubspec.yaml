@@ -28,16 +28,20 @@ flutter:
 
   #assets: // Colocar todas as imagens do projeto
   assets: 
+    - assets/projetos/codequest.png
+    - assets/projetos/apae.png
+    - assets/projetos/cronometro.jpg
+    - assets/projetos/ye.png
     - assets/emoji.jpg
-    - assets/bootstrap.png
-    - assets/css.png
-    - assets/flutter.png
-    - assets/git.png
-    - assets/googlecloud.png
-    - assets/html.png
-    - assets/java.png
-    - assets/javascript.png
-    - assets/python.png
-    - assets/react.png
-    - assets/tailwind.png
+    - assets/carrossel/bootstrap.png
+    - assets/carrossel/css.png
+    - assets/carrossel/flutter.png
+    - assets/carrossel/git.png
+    - assets/carrossel/googlecloud.png
+    - assets/carrossel/html.png
+    - assets/carrossel/java.png
+    - assets/carrossel/javascript.png
+    - assets/carrossel/python.png
+    - assets/carrossel/react.png
+    - assets/carrossel/tailwind.png
 

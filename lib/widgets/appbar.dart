@@ -1,52 +1,111 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
- 
-String gitURL = 'https://github.com/pgmaximo';
-String linURL = 'https://www.linkedin.com/in/pedro-gabriel-maximo/';
 
-class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const MyAppBar({super.key});
+const double breakpointMobile = 600;
+
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final VoidCallback onScrollToStart;
+  final VoidCallback onScrollToAbout;
+  final VoidCallback onScrollToProjects;
+  final VoidCallback onScrollToContact;
+
+  const MyAppBar({
+    super.key,
+    required this.onScrollToStart,
+    required this.onScrollToAbout,
+    required this.onScrollToProjects,
+    required this.onScrollToContact,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    return screenWidth < breakpointMobile ? _buildMobileAppBar() : _buildDesktopAppBar();
+  }
+
+  AppBar _buildMobileAppBar() {
     return AppBar(
       backgroundColor: Colors.white,
-      
-      title: const Text( 
-        'PedroMaximo.dev',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 24,
-          color: Color.fromARGB(255, 0, 26, 118)
+      forceMaterialTransparency: true,
+      elevation: 0,
+      centerTitle: true,
+      title: GestureDetector(
+        onTap: onScrollToStart,
+        child: const Text(
+          'PedroMaximo.dev',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            color: Color.fromARGB(255, 0, 26, 118),
+          ),
         ),
       ),
-      centerTitle: true,
-      actions: [
-        IconButton(
-          // Rota para o site externo Github
-          onPressed: () async {        
-            if (await canLaunchUrl(Uri.parse(gitURL))) {
-              await launchUrl(Uri.parse(gitURL));
-            }
-          },
-          icon: const FaIcon(FontAwesomeIcons.github), color: const Color.fromARGB(255, 0, 26, 118), iconSize: 40,
-          tooltip: 'Github',
-        ),
-        IconButton(
-          // Rota para o site externo LinkedIn
-          onPressed: () async {        
-            if (await canLaunchUrl(Uri.parse(linURL))) {
-              await launchUrl(Uri.parse(linURL));
-            }
-          },
-          icon: const FaIcon(FontAwesomeIcons.linkedin), color: const Color.fromARGB(255, 0, 26, 118), iconSize: 40,
-          tooltip: 'LinkedIn',
-        ),
-      ]
     );
   }
+
+  AppBar _buildDesktopAppBar() {
+    return AppBar(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      forceMaterialTransparency: true,
+      centerTitle: false,
+      title: GestureDetector(
+        onTap: onScrollToStart,
+        child: const Text(
+          'PedroMaximo.dev',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            color: Color.fromARGB(255, 0, 26, 118),
+          ),
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: onScrollToAbout,
+          style: const ButtonStyle(
+            alignment: Alignment.center,
+          ),
+          child: const Text(
+            'Sobre Mim',
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 26, 118),
+              fontSize: 20,
+              fontWeight: FontWeight.w600
+            ),
+          ),
+        ),
+        TextButton(
+          onPressed: onScrollToProjects,
+          style: const ButtonStyle(
+            alignment: Alignment.center,
+          ),
+          child: const Text(
+            'Projetos',
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 26, 118),
+              fontSize: 20,
+              fontWeight: FontWeight.w600
+            ),
+          ),
+        ),
+        TextButton(
+          onPressed: onScrollToContact,
+          style: const ButtonStyle(
+            alignment: Alignment.center,
+          ),
+          child: const Text(
+            'Contato',
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 26, 118),
+              fontSize: 20,
+              fontWeight: FontWeight.w600
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

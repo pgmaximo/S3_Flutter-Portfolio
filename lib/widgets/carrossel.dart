@@ -1,47 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-final List<String> imagensLinguagens = [
-  'assets/bootstrap.png',
-  'assets/css.png',
-  'assets/flutter.png',
-  'assets/git.png',
-  'assets/googlecloud.png',
-  'assets/html.png',
-  'assets/java.png',
-  'assets/javascript.png',
-  'assets/python.png',
-  'assets/react.png',
-  'assets/tailwind.png',
-];
-
-final List<String> itens = [
-  "Bootstrap",
-  "CSS",
-  "Flutter",
-  "GIT",
-  "Google Cloud",
-  "HTML",
-  "Java",
-  "JavaScript",
-  "Python",
-  "React",
-  "Tailwind",
-];
-
-final List<String> descricao = [
-  "Usei Bootstrap durante o 2 semestre na matéria de desenvolvimento Front-End.",
-  "Aprende CSS durante 2 semestre na matéria de desenvolvimento Front-End, apliquei meu conhecimento no meu Projeto Integrador, onde eu e meu grupo fizemos uma parte do site para a APAE.",
-  "Flutter",
-  "GIT",
-  "Google Cloud",
-  "HTML",
-  "Java",
-  "JavaScript",
-  "Python",
-  "React",
-  "Tailwind",
-];
+import 'package:portfolio/utils/info_carrossel.dart';
 
 class CarrosselWidget extends StatefulWidget {
   const CarrosselWidget({super.key});
@@ -63,7 +22,7 @@ class _CarrosselWidgetState extends State<CarrosselWidget> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constrait) {
-        return Container(
+        return SizedBox(
           width: constrait.maxWidth,
           child: Column(
             children: [
@@ -72,13 +31,12 @@ class _CarrosselWidgetState extends State<CarrosselWidget> {
                   return ImgCarrossel(imgPath: imgPath);
                 }).toList(),
                 options: CarouselOptions(
-                  enlargeCenterPage: true,
+                  enlargeCenterPage: false,
                   autoPlay: true,
                   autoPlayInterval: const Duration(seconds: 3),
                   autoPlayCurve: Curves.linear,
-                  enableInfiniteScroll: true,
                   height: 125,
-                  viewportFraction: 0.20,
+                  viewportFraction: 0.16,
                   onPageChanged: (index, reason) {
                     _mudarItemCarrossel(index);
                   }
@@ -86,6 +44,7 @@ class _CarrosselWidgetState extends State<CarrosselWidget> {
               ),
               Container(
                 padding: const EdgeInsets.all(5),
+                width: 600,
                 child: Column(
                   children: [
                     Text(
@@ -97,7 +56,8 @@ class _CarrosselWidgetState extends State<CarrosselWidget> {
                     ),
                     Text(
                       descricao[indiceItemCarrossel],
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.center,
+                      
                     ),
                   ],
                 )

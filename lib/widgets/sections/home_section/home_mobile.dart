@@ -19,16 +19,20 @@ class HomeMenuMobile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 5),
-          const Wrap(
+          const Column(
             children: [
-              Text(
-                'Sou programador ',
-                style: TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                ),
+              Wrap(
+                children: [
+                  Text(
+                    'Sou programador ',
+                    style: TextStyle(
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextoAnimado(),
+                ],
               ),
-              TextoAnimado(),
             ],
           ),
           const SizedBox(height: 20), // Espaçamento para a imagem

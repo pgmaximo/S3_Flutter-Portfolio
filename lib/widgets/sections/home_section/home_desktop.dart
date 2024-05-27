@@ -29,7 +29,7 @@ class HomeMenuDesktop extends StatelessWidget {
                     Text(
                       'Sou programador ',
                       style: TextStyle(
-                        fontSize: 52,
+                        fontSize: 48,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
